@@ -1,9 +1,19 @@
 %w(sinatra json).each { |gem| require gem }
 
 post '/report_only' do
-  request.body.read
+  create_violation_report(
+    enforced: false,
+    violation: request.body.read
+  )
 end
 
 post '/enforce' do
-  request.body.read
+  create_violation_report(
+    enforced: true,
+    violation: request.body.read
+  )
+end
+
+def create_violation_report(enforced:, violation:)
+  # do it
 end
