@@ -15,3 +15,19 @@ use their own violation collector. This aims to solve that.
 - Handle a large traffic sites' violations with ease.
 - Be configurable enough to point anywhere if the base implementation
   doesn't fit in with your tooling.
+
+### Running the application
+
+```sh
+$ ruby app.rb
+```
+
+### Running the workers
+
+```sh
+QUEUE=* bundle exec rake resque:work
+```
+
+The redis connection assumes you are using [Boxen](https://boxen.github.com). If
+you're not, be sure to update the `redis_url` method to point at your local
+redis instance. (This will get some love in the future, just not now).
