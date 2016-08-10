@@ -18,14 +18,10 @@ use their own violation collector. This aims to solve that.
 
 ### Running the application
 
-```sh
-$ ruby app.rb
-```
-
-### Running the workers
+Use foreman to run all the required applications and workers locally.
 
 ```sh
-QUEUE=* bundle exec rake resque:work
+$ bundle exec foreman start
 ```
 
 The redis connection assumes you are using [Boxen](https://boxen.github.com). If
