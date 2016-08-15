@@ -1,5 +1,4 @@
 require 'sinatra'
-require 'json'
 require 'redis'
 require 'resque'
 require './jobs/create_csp_violation_job'

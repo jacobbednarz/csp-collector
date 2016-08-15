@@ -1,3 +1,5 @@
+require 'json'
+
 class CreateCspViolationJob
   @queue = :create_csp_violations
 
