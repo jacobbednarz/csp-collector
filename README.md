@@ -4,7 +4,7 @@ This is a (simple) content security policy violation collector.
 
 ### Motivations
 
-While there are some great services out there (like report.io), there
+While there are some great services out there (like report-uri.io), there
 is nothing out there for people that run large applications and wish to
 use their own violation collector. This aims to solve that.
 
