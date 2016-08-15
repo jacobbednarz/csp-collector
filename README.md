@@ -27,3 +27,12 @@ $ bundle exec foreman start
 The redis connection assumes you are using [Boxen](https://boxen.github.com). If
 you're not, be sure to update the `redis_url` method to point at your local
 redis instance. (This will get some love in the future, just not now).
+
+### Testing
+
+This project uses RSpec for it's test suite and can be kicked off using the
+following one liner:
+
+```sh
+$ bundle exec rspec spec
+```
