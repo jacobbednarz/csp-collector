@@ -7,3 +7,5 @@ gem 'rake'
 gem 'redis'
 gem 'resque'
 gem 'foreman'
+
+gem 'rspec'
