@@ -1,14 +1,26 @@
 require 'json'
+require 'time'
 
 class CreateCspViolationJob
   @queue = :create_csp_violations
-
-  attr_accessor :violation_report
 
   def self.perform(enforced, violation)
     @violation_report = JSON.parse(violation)['csp-report']
 
     return unless actionable_blocked_uri?
+
+    @output = []
+    @output << "[#{Time.now.iso8601}]"
+
+    @violation_report.each do |directive_name, directive_value|
+      @output << %Q(#{directive_name}="#{directive_value}")
+    end
+
+    generate_logging_output!
+  end
+
+  def self.generate_logging_output!
+    puts @output.join(' ')
   end
 
   # Private: Determine if we have an actionable report based on 'blocked-uri'.
